@@ -1,0 +1,14 @@
+# Ignore the vendor folder
+vendor
+
+# Ignore node modules
+node_modules
+
+# Ignore packages and archives
+*.tar.gz
+*.zip
+*.gz
+*.tar
+
+# Ignore sql files
+*.sql
