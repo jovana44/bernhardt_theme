@@ -2,12 +2,12 @@
 
     <div class="author-block__profile">
         <div class="author-block__image"><?php echo get_avatar(  get_the_author_meta( 'ID' ), '150' ); ?></div>
-        
+
         <div class="author-block__socials">
             <span>Stay In Touch:</span>
 
             <div class="author-block__socials-row">
-                <a class="social-icon-round social-icon-round--white" href="#" target="_blank" rel="noopener">
+                <a class="social-icon-round social-icon-round--white" href="mailto:<?php the_author_meta( 'user_email' ); ?>" aria-label="Contact email">
 
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 20 15">
                         <defs>
@@ -43,7 +43,7 @@
                     </svg>
 
                 </a>
-                <a class="social-icon-round social-icon-round--white" href="#" target="_blank" rel="noopener">
+                <a class="social-icon-round social-icon-round--white" href="<?php the_author_meta( 'user_url' ); ?>" target="_blank" rel="noopener">
                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
                         <defs>
                             <style>
@@ -58,21 +58,17 @@
                         <path class="a" d="M.4,7.977h3.11V17.991H.4Z" transform="translate(-0.148 -2.991)" />
                         <path class="a" d="M1.8,0A1.81,1.81,0,1,0,3.6,1.8,1.8,1.8,0,0,0,1.8,0Z" />
                     </svg>
-
                 </a>
             </div>
         </div>
     </div>
 
     <div class="author-block__text">
-        <div class="author-block__name">
-            <?php the_author(); ?>
-
-            <?php echo get_the_author_meta('user_firstname'); ?>
-            <?php echo get_the_author_meta('user_lastname'); ?>
-        </div>
-        <div class="author-block__position"></div>
-        <div class="author-block__bio"><?php the_author_meta( 'description' ); ?></div>
+        <h3 class="author-block__name"><?php the_author(); ?></h3>
+        <div class="author-block__position">Venenatis tellus in metus vulputate</div>
+        <?php if (get_the_author_meta('description')): ?>
+            <div class="author-block__bio"><?php the_author_meta( 'description' ); ?></div>
+        <?php endif; ?>
     </div>
 
 </article>

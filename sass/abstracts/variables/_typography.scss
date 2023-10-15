@@ -37,14 +37,14 @@ h1,
 
 h2,
 .h2 {
-    @include fluid-type(320px, 1920px, 30px, 48px);
-    @include line-height(320px, 1920px, 34px, 64px);
+    @include fluid-type(320px, 1920px, 28px, 48px);
+    @include line-height(320px, 1920px, 32px, 64px);
 }
 
 h3,
 .h3 {
-    @include fluid-type(320px, 1920px, 24px, 32px);
-    @include line-height(320px, 1920px, 29px, 44px);
+    @include fluid-type(320px, 1920px, 22px, 32px);
+    @include line-height(320px, 1920px, 27px, 44px);
 }
 
 h4,
@@ -61,8 +61,8 @@ h5,
 
 h6,
 .h6 {
-    @include fluid-type(320px, 1920px, 18px, 18px);
-    @include line-height(320px, 1920px, 20px, 24px);
+    @include fluid-type(320px, 1920px, 16px, 18px);
+    @include line-height(320px, 1920px, 18px, 24px);
 }
 
 .big-text {

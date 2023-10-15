@@ -11,6 +11,8 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
+    
+    <?php while ( have_posts() ) : the_post(); ?>
 
     <section class="single-hero"
         style="background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo get_template_directory_uri(); ?>/images/hero-bg@x2.png')">
@@ -128,7 +130,7 @@ get_header();
                             <h3><?php the_title(); ?></h3>
 
                             <div class="post-card__btn">
-                                Read more 
+                                Read more
                                 <svg xmlns="http://www.w3.org/2000/svg" width="28.739" height="6.736"
                                     viewBox="0 0 28.739 6.736">
                                     <defs>
@@ -161,7 +163,7 @@ get_header();
         </div>
     </section>
 
-
+    <?php endwhile; ?>
 </main><!-- #main -->
 
 <?php
