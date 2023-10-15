@@ -1,0 +1,39 @@
+.hide-on-desktop {
+    @include respond-to('large') {
+        display: none;
+    }
+}
+
+.hide-on-mobile {
+    display: none;
+    @include respond-to('large') {
+        display: block;
+    }
+}
+
+.arrow {
+    border: solid $text;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    &.right {
+        transform: rotate(-45deg);
+    }
+    &.left {
+        transform: rotate(135deg);
+    }
+    &.up {
+        transform: rotate(-135deg);
+    }
+    &.down {
+        transform: rotate(45deg);
+    }
+    &--small {
+        height: 4px;
+        width: 4px;
+    }
+    &--light {
+        border-color: white;
+    }
+}

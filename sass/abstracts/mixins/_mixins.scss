@@ -109,30 +109,3 @@
 .aspect-radio-16-9 {
     @include aspect-ratio(56.24%);
 }
-
-.arrow {
-    border: solid $text;
-    border-width: 0 1px 1px 0;
-    display: inline-block;
-    height: 8px;
-    width: 8px;
-    &.right {
-        transform: rotate(-45deg);
-    }
-    &.left {
-        transform: rotate(135deg);
-    }
-    &.up {
-        transform: rotate(-135deg);
-    }
-    &.down {
-        transform: rotate(45deg);
-    }
-    &--small {
-        height: 4px;
-        width: 4px;
-    }
-    &--light {
-        border-color: white;
-    }
-}

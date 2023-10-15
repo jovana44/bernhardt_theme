@@ -44,6 +44,20 @@
 			            	)
 			            );
 			            ?>
+<div class="hide-on-desktop">
+
+<?php
+		    	             wp_nav_menu(
+		    	             	array(
+		    	             		'theme_location' => 'header-menu-right'
+		    	             	)
+		    	             );
+			                 ?>
+
+<?php get_search_form(); ?>
+
+</div>
+
                     </nav><!-- #site-navigation -->
 
 
@@ -53,33 +67,41 @@
 
                     </a><!-- logo -->
 
-                    <nav class="navigation-right">
-                        <?php
-		    	        wp_nav_menu(
-		    	        	array(
-		    	        		'theme_location' => 'header-menu-right'
-		    	        	)
-		    	        );
-			            ?>
-                    </nav><!-- #site-navigation -->
+
+                    <div class="header__right">
+                        <nav class="navigation-right hide-on-mobile">
+                            <?php
+		    	             wp_nav_menu(
+		    	             	array(
+		    	             		'theme_location' => 'header-menu-right'
+		    	             	)
+		    	             );
+			                 ?>
+                        </nav><!-- #site-navigation -->
+
+                        <div class="hide-on-mobile">
+                        <?php get_search_form(); ?>
+                        </div>
+
+                        <div class="language">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/globe-icon.svg" alt="globe icon"
+                            width="13" height="13">
+                            <div class="language__picker">
+                                <a class="language__current" href="#">Eng<span class="arrow arrow--small arrow--light down"></span></a>
+                                <ul class="language__dropdown sub-menu">
+                                    <li>Srb</li>
+                                </ul>
+                            </div>
+                        </div>
 
 
-                    <div class="language">
 
-                        <a href="">Eng<span class="nav-arrow"></span></a>
-
-                        <ul class="language__sub-menu sub-menu">
-                            <li class="lang-item">Srb</li>
-                        </ul>
+                        <button class="menu-toggle" aria-label="mobile-naigation-button">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button><!-- menu toggle -->
                     </div>
-
-
-                    <button class="menu-toggle" aria-label="mobile-naigation-button">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button><!-- menu toggle -->
-
 
                 </div>
             </div>

@@ -4,22 +4,10 @@
     background-size: cover;
     margin-top: -70px;
     padding-top: 70px;
-    // @media only screen and (min-width: 768px) {
-    //     background-size: 50%;
-    //     min-height: 100vh;
-    // }
-    // @media only screen and (min-width: 992px) {
-    //     margin-top: -90px;
-    //     background-size: 60%;
-    //     min-height: 800px;
-    // }
-    // @media only screen and (min-width: 992px) {
-    //     min-height: 840px;
-    // }
-    // @media only screen and (min-width: 1450px) {
-    //     background-size: contain;
-    //     min-height: 750px;
-    // }
+    @include respond-to('medium') {
+        margin-top: -74px;
+        padding-top: 74px;
+    }
     &__title {
         text-align: center;
         color: white;
