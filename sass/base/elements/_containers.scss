@@ -1,0 +1,29 @@
+.container {
+    padding-left: 16px;
+    padding-right: 16px;
+    @include center-block;
+    width: 100%;
+    @include respond-to('small') {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    @include respond-to('large') {
+        max-width: 1300px;
+        width: 90%;
+    }
+    @include respond-to('xxlarge') {
+        width: 100%;
+        max-width: 1558px;
+    }
+    &--narrow {
+        @include respond-to('small') {
+            padding-left: 20px;
+            padding-right: 20px;
+            width: 90%;
+        }
+        @include respond-to('large') {
+            max-width: 1040px;
+            width: 90%;
+        }
+    }
+}

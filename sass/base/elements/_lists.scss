@@ -1,26 +1,28 @@
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+    margin: 1.8rem 0;
+    padding-left: 25px;
+    @include respond-to('large') {
+        padding-left: 2.6rem;
+    }
+    li {
+        margin-bottom: 0.8rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 }
 
 ul {
-	list-style: disc;
+    list-style: disc;
 }
 
 ol {
-	list-style: decimal;
+    list-style: decimal;
 }
 
-li > ul,
-li > ol {
-	margin-bottom: 0;
-	margin-left: 1.5em;
-}
-
-dt {
-	font-weight: 700;
-}
-
-dd {
-	margin: 0 1.5em 1.5em;
+li>ul,
+li>ol {
+    margin-bottom: 0;
+    margin-left: 1.5rem;
 }

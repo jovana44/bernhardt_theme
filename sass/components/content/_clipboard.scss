@@ -1,0 +1,27 @@
+.clipboard {
+    padding: 20px 30px;
+    background-color: $background;
+    @include respond-to('medium') {
+        padding: 30px 50px;
+    }
+    h3 {
+        margin-bottom: 10px;
+    }
+    &__box {
+        position: relative;
+    }
+    &__url {
+        background-color: white;
+        width: 100%;
+        border: none;
+    }
+    input[type="text"] {
+        padding: 10px 40px 10px 10px;
+    }
+    &__icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        bottom: 10px;
+    }
+}

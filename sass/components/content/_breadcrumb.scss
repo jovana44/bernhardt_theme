@@ -1,0 +1,51 @@
+.breadcrumbs {
+    &-wrap {
+        margin: 20px 0;
+    }
+    color:white;
+    a {
+        color: white;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        &:hover {
+            color: $primary;
+        }
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    .post-categories {
+        li {
+            &:last-of-type a {
+                margin-right: 0;
+            }
+        }
+    }
+    .separator {
+        display: inline-block;
+        margin-left: 10px;
+        @extend .arrow;
+        @extend .arrow--light;
+        @extend .arrow--small;
+        @extend .right;
+    }
+    .active {
+        color: $primary;
+        display: flex;
+        align-items: center;
+        .separator {
+            border-color: $primary;
+            margin-right: 10px;
+        }
+    }
+}

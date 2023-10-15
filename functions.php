@@ -149,6 +149,7 @@ function bernhardt_scripts() {
 	wp_style_add_data( 'bernhardt-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'bernhardt-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'bernhardt-main', get_template_directory_uri() . '/js/main.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -172,14 +173,10 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/template-functions.php';
 
 /**
- * Customizer additions.
+ * Function for breadcrumbs
  */
-require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/breadcrumbs.php';
 
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
+
+
 

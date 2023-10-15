@@ -1,11 +1,138 @@
 // Center block
 @mixin center-block {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-// Column width with margin
-@mixin column-width($numberColumns: 3) {
-	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+@mixin image-cover() {
+    position: relative;
+    overflow: hidden;
+    img {
+        position: absolute;
+        top: 50%;
+        bottom: 50%;
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: auto;
+    }
+}
+
+@mixin cover() {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+// ------------ FLUID FONT SIZE  
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+    $u1: unit($min-vw);
+    $u2: unit($max-vw);
+    $u3: unit($min-font-size);
+    $u4: unit($max-font-size);
+    @if $u1==$u2 and $u1==$u3 and $u1==$u4 {
+        & {
+            font-size: $min-font-size;
+            @media screen and (min-width: $min-vw) {
+                font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+            }
+            @media screen and (min-width: $max-vw) {
+                font-size: $max-font-size;
+            }
+        }
+    }
+}
+
+@mixin line-height($min-vw, $max-vw, $min-font-size, $max-font-size) {
+    $u1: unit($min-vw);
+    $u2: unit($max-vw);
+    $u3: unit($min-font-size);
+    $u4: unit($max-font-size);
+    @if $u1==$u2 and $u1==$u3 and $u1==$u4 {
+        & {
+            line-height: $min-font-size;
+            @media screen and (min-width: $min-vw) {
+                line-height: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+            }
+            @media screen and (min-width: $max-vw) {
+                line-height: $max-font-size;
+            }
+        }
+    }
+}
+
+// ------------- RESPONSIVE 
+@mixin respond-to($breakpoint) {
+    $raw-query: map-get($breakpoints, $breakpoint);
+    @if $raw-query {
+        $query: if(type-of($raw-query)=='string', unquote($raw-query), inspect($raw-query));
+        @media #{$query} {
+            @content;
+        }
+    }
+    @else {
+        @error 'No value found for `#{$breakpoint}`. '+'Please make sure it is defined in `$breakpoints` map.';
+    }
+}
+
+// Aspect ratio
+@mixin aspect-ratio($padding) {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    padding-bottom: $padding;
+    img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+// Aspect ratio - background image
+.aspect-ratio-bg {
+    height: 0;
+    padding-top: 56.24%;
+    overflow: hidden;
+    display: block;
+}
+
+.aspect-radio-16-9 {
+    @include aspect-ratio(56.24%);
+}
+
+.arrow {
+    border: solid $text;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    &.right {
+        transform: rotate(-45deg);
+    }
+    &.left {
+        transform: rotate(135deg);
+    }
+    &.up {
+        transform: rotate(-135deg);
+    }
+    &.down {
+        transform: rotate(45deg);
+    }
+    &--small {
+        height: 4px;
+        width: 4px;
+    }
+    &--light {
+        border-color: white;
+    }
 }

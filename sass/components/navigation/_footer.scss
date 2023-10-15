@@ -1,0 +1,122 @@
+.footer {
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    color: white;
+    &__top {
+        padding: 30px 0;
+        border-bottom: 1px solid $primary;
+        @include respond-to('small') {
+            padding: 5rem 0;
+        }
+        @include respond-to('medium') {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    &__main {
+        padding: 30px 0;
+        @include respond-to('small') {
+            padding: 5rem 0;
+        }
+    }
+    &__bottom {
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        @include respond-to('medium') {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    &__logo {
+        margin-bottom: 30px;
+        @include respond-to('medium') {
+            margin-bottom: 5rem;
+        }
+    }
+    &__subscribe {
+        max-width: 500px;
+        margin-bottom: 20px;
+        @include respond-to('medium') {
+            margin-bottom: 0;
+        }
+        h3 {
+            color: $primary;
+            margin-bottom: 10px;
+        }
+    }
+    &__btns {
+        display: flex;
+        align-items: center;
+        a {
+            margin-right: 20px;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+    &__menus {
+        @include respond-to('small') {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+        }
+        @include respond-to('large') {
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        }
+    }
+    &__menu {
+        margin-bottom: 30px;
+        @include respond-to('small') {
+            margin-bottom: 0;
+        }
+        &-title {
+            margin-bottom: 20px;
+            display: block;
+            color: $primary;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            li {
+                margin-bottom: 10px;
+            }
+            a {
+                color: white;
+            }
+        }
+    }
+    &__copyright {
+        margin: 0;
+    }
+    &__bottom-menu {
+        margin-bottom: 20px;
+        @include respond-to('medium') {
+            margin-bottom: 0;
+            margin-left: 30px;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            li {
+                margin-right: 12px;
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
+            a {
+                // color: white;
+                text-decoration: underline;
+            }
+        }
+    }
+}

@@ -1,3 +1,26 @@
-body {
-	background: $color__background-body; // Fallback for when there is no custom background color defined.
+html {
+    font-size: 34%;
+    scroll-behavior: smooth;
+    @include respond-to('small') {
+        font-size: 40%;
+    }
+    @include respond-to('medium') {
+        font-size: 48%;
+    }
+    @include respond-to('large') {
+        font-size: 62.5%;
+    }
+    @include respond-to('xxlarge') {
+        font-size: 68%;
+    }
+    @include respond-to('xxxlarge') {
+        font-size: 73%;
+    }
+    &.noscroll {
+        overflow: hidden;
+        @include respond-to('small') {
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+    }
 }

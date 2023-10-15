@@ -1,0 +1,5 @@
+/*--------------------------------------------------------------
+# RESPONSIVE BREAKPOINTS
+--------------------------------------------------------------*/
+
+$breakpoints: ( 'xsmall': (min-width: 576px), 'small': (min-width: 768px), 'medium': (min-width: 992px), 'large': (min-width: 1200px), 'xlarge': (min-width: 1440px), 'xxlarge': (min-width: 1600px), 'xxxlarge': (min-width: 1800px), 'xxxxlarge': (min-width: 1920px));

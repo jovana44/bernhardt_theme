@@ -16,6 +16,11 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;600&family=Raleway:wght@400;500;600&display=swap"
+        rel="stylesheet">
 
 
     <?php wp_head(); ?>
@@ -29,40 +34,53 @@
 
         <header id="masthead" class="header">
 
-
-            <nav class="main-navigation">
-                <button class="menu-toggle" aria-controls="primary-menu"
-                    aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'bernhardt' ); ?></button>
-                <?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'header-menu-left'
-				)
-			);
-			?>
-            </nav><!-- #site-navigation -->
-
-
-            <a href="/" class="header__logo" aria-label="Home page">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="site-logo" width="364"
-                    height="24">
-
-            </a><!-- logo -->
-
-			<nav class="navigation-right">
-                <?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'header-menu-right'
-				)
-			);
-			?>
-            </nav><!-- #site-navigation -->
-
-			
+            <div class="container">
+                <div class="header__row">
+                    <nav class="main-navigation">
+                        <?php
+			            wp_nav_menu(
+			            	array(
+			            		'theme_location' => 'header-menu-left'
+			            	)
+			            );
+			            ?>
+                    </nav><!-- #site-navigation -->
 
 
+                    <a href="/" class="header__logo" aria-label="Home page">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="site-logo"
+                            width="364" height="24">
+
+                    </a><!-- logo -->
+
+                    <nav class="navigation-right">
+                        <?php
+		    	        wp_nav_menu(
+		    	        	array(
+		    	        		'theme_location' => 'header-menu-right'
+		    	        	)
+		    	        );
+			            ?>
+                    </nav><!-- #site-navigation -->
 
 
+                    <div class="language">
 
+                        <a href="">Eng<span class="nav-arrow"></span></a>
+
+                        <ul class="language__sub-menu sub-menu">
+                            <li class="lang-item">Srb</li>
+                        </ul>
+                    </div>
+
+
+                    <button class="menu-toggle" aria-label="mobile-naigation-button">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button><!-- menu toggle -->
+
+
+                </div>
+            </div>
         </header><!-- #masthead -->

@@ -1,27 +1,31 @@
 /* Navigation
 --------------------------------------------- */
+
 @import "navigation/navigation";
+@import "navigation/footer";
 
 /* Posts and pages
 --------------------------------------------- */
-@import "content/posts-and-pages";
 
-/* Comments
---------------------------------------------- */
-@import "comments/comments";
-
-/* Widgets
---------------------------------------------- */
-@import "widgets/widgets";
+@import "content/single-hero";
+@import "content/single-main";
+@import "content/social-share";
+@import "content/similar-posts";
+@import "content/breadcrumb";
+@import "content/clipboard";
+@import "content/post-card";
 
 /* Media
 --------------------------------------------- */
+
 @import "media/media";
 
 /* Captions
 --------------------------------------------- */
+
 @import "media/captions";
 
 /* Galleries
 --------------------------------------------- */
+
 @import "media/galleries";

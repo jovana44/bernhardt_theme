@@ -1,0 +1,32 @@
+.author-block {
+    margin-bottom: 30px;
+    background-color: $primary;
+    color: white;
+    padding: 30px;
+    @include respond-to('small') {
+        margin-bottom: 5rem;
+        padding: 5rem;
+        display: grid;
+        grid-template-columns: 1fr 6fr;
+        column-gap: 30px;
+    }
+    &__profile {}
+    &__text {}
+    &__name {
+        margin-bottom: 3px;
+    }
+    hr {
+        background-color: white;
+        margin: 20px 0;
+    }
+    &__position {}
+    &__bio {}
+    &__socials {
+        &-row {
+            margin-top: 10px;
+        }
+    }
+    &__image {
+        margin-bottom: 10px;
+    }
+}
