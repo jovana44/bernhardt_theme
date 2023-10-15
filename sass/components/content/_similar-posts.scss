@@ -18,4 +18,10 @@
             grid-template-columns: 1fr 1fr 1fr;
         }
     }
+    .post-card {
+        margin-bottom: 30px;
+        @include respond-to('small') {
+            margin-bottom: 0;
+        }
+    }
 }

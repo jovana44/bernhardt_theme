@@ -8,41 +8,45 @@
         border-bottom: 1px solid $primary;
         @include respond-to('small') {
             padding: 5rem 0;
-        }
-        @include respond-to('medium') {
             display: flex;
             justify-content: space-between;
+            align-items: flex-start;
         }
     }
     &__main {
         padding: 30px 0;
-        @include respond-to('small') {
+        @include respond-to('medium') {
             padding: 5rem 0;
         }
     }
     &__bottom {
-        padding-bottom: 20px;
+        padding-bottom: 75px;
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
-        @include respond-to('medium') {
-            display: flex;
+        @include respond-to('small') {
+            padding-bottom: 20px;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
         }
+        @include respond-to('medium') {
+            padding-bottom: 20px;
+        }
     }
     &__logo {
         margin-bottom: 30px;
+        display: block;
         @include respond-to('medium') {
             margin-bottom: 5rem;
         }
     }
     &__subscribe {
-        max-width: 500px;
+        max-width: 550px;
         margin-bottom: 20px;
-        @include respond-to('medium') {
+        @include respond-to('small') {
             margin-bottom: 0;
+            margin-right: 30px;
         }
         h3 {
             color: $primary;
@@ -52,6 +56,7 @@
     &__btns {
         display: flex;
         align-items: center;
+        flex-shrink: 0;
         a {
             margin-right: 20px;
             &:last-of-type {
@@ -71,32 +76,72 @@
     }
     &__menu {
         margin-bottom: 30px;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
         @include respond-to('small') {
             margin-bottom: 0;
         }
         &-title {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             display: block;
+            font-size: 18px;
             color: $primary;
+            text-transform: capitalize;
+            font-family: $title-font;
         }
         ul {
             margin: 0;
             padding: 0;
             list-style-type: none;
-            li {
-                margin-bottom: 10px;
-            }
             a {
                 color: white;
+            }
+        }
+        &:not(.footer__socials) {
+            ul {
+                li {
+                    margin-bottom: 7px;
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+    &__socials {
+        ul {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        li {
+            margin-right: 20px;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+        .a {
+            transition: 0.25s ease-in-out;
+        }
+        a {
+            &:hover {
+                .a {
+                    fill: $primary;
+                }
             }
         }
     }
     &__copyright {
         margin: 0;
+        text-align: center;
+        @include respond-to('small') {
+            text-align: left;
+        }
     }
     &__bottom-menu {
-        margin-bottom: 20px;
-        @include respond-to('medium') {
+        margin-bottom: 10px;
+        @include respond-to('small') {
             margin-bottom: 0;
             margin-left: 30px;
         }
@@ -106,15 +151,18 @@
             list-style-type: none;
             display: flex;
             align-items: center;
+            justify-content: center;
             flex-wrap: wrap;
             li {
-                margin-right: 12px;
-                &:last-of-type {
+                margin-right: 8px;
+                margin-left: 8px;
+                @include respond-to('small') {
+                    margin-bottom: 0;
+                    margin-left: 30px;
                     margin-right: 0;
                 }
             }
             a {
-                // color: white;
                 text-decoration: underline;
             }
         }

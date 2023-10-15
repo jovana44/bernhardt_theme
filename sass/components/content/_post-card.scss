@@ -5,8 +5,9 @@
     &__img {
         @include aspect-ratio(40%);
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: 120%;
         background-position: center;
+        transition: 0.3s ease-in-out;
     }
     &__content {
         flex-grow: 1;
@@ -14,22 +15,53 @@
         background-color: $primary-light;
         display: flex;
         flex-direction: column;
+        transition: 0.3s ease-in-out;
     }
     &__date {
-        margin-bottom: 10px;
+        margin-bottom: 3px;
         color: $text;
+        transition: 0.3s ease-in-out;
+        span {
+            display: inline-block;
+            &:first-of-type {
+                margin-right: 20px;
+            }
+        }
     }
     h3 {
         margin-bottom: 25px;
         color: $text;
+        transition: 0.3s ease-in-out;
     }
     &__btn {
         margin-top: auto;
         color: $primary;
         display: flex;
         align-items: center;
-        img {
+        transition: 0.3s ease-in-out;
+        text-transform: uppercase;
+        svg {
             margin-left: 10px;
+        }
+    }
+    &:hover {
+        .post-card__img {
+            background-position-x: 70%;
+        }
+        .post-card__content {
+            background-color: $primary;
+        }
+        .post-card__date {
+            color: white;
+        }
+        h3 {
+            color: white;
+        }
+        .post-card__btn {
+            color: white;
+            .a {
+                stroke: white;
+            }
         }
     }
 }

@@ -113,8 +113,7 @@ get_header();
                             }
                         ?>
 
-                        <div class="post-card__img"
-                            style="background-image: url('<?php echo $backgroundImg;?>')"></div>
+                        <div class="post-card__img" style="background-image: url('<?php echo $backgroundImg;?>')"></div>
 
                         <div class="post-card__content">
                             <div class="post-card__date">
@@ -129,9 +128,24 @@ get_header();
                             <h3><?php the_title(); ?></h3>
 
                             <div class="post-card__btn">
-                                Read more <img
-                                    src="<?php echo get_template_directory_uri(); ?>/images/arrow-right-card.svg"
-                                    alt="arrow" width="29" height="7">
+                                Read more 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28.739" height="6.736"
+                                    viewBox="0 0 28.739 6.736">
+                                    <defs>
+                                        <style>
+                                        .a {
+                                            fill: none;
+                                            stroke: #c4bc94;
+                                            transition: 0.3s ease-in-out;
+                                        }
+                                        </style>
+                                    </defs>
+                                    <g transform="translate(0 6.368) rotate(-90)">
+                                        <path class="a" d="M27.921,0H0"
+                                            transform="translate(3.014 27.921) rotate(-90)" />
+                                        <path class="a" d="M0,0,3,3.266,6,0" transform="translate(0 24.734)" />
+                                    </g>
+                                </svg>
                             </div>
                         </div>
                     </a>
