@@ -12,7 +12,7 @@
 ?>
 
 <footer class="footer"
-    style="background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo get_template_directory_uri(); ?>/images/hero-bg@x2.png')">
+    style="background-image: linear-gradient( rgba(38, 38, 38, 0.8), rgba(38, 38, 38, 0.8)), url('<?php echo get_template_directory_uri(); ?>/images/footer-bg@x2.png')">
     <div class="container">
 
         <div class="footer__top">
@@ -30,11 +30,9 @@
         <div class="footer__main">
 
             <a href="/" class="footer__logo" aria-label="Home page">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="site-logo" width="364"
+				<img src="<?php echo get_template_directory_uri(); ?>/images/logo@x2.png" alt="site-logo" width="364"
                     height="24">
-
             </a><!-- logo -->
-
 
             <div class="footer__menus">
 

@@ -70,20 +70,3 @@ h6,
     @include line-height(320px, 1440px, 24px, 31px);
     font-family: $title-font;
 }
-
-.list-item {
-    padding-left: 26px;
-    position: relative;
-    &::before {
-        content: '';
-        position: absolute;
-        top: 9px;
-        left: 8px;
-        width: 5px;
-        height: 5px;
-        border-radius: 50%;
-        @include respond-to('medium') {
-            top: 10px;
-        }
-    }
-}

@@ -2,9 +2,6 @@ ul,
 ol {
     margin: 1.8rem 0;
     padding-left: 25px;
-    @include respond-to('large') {
-        padding-left: 2.6rem;
-    }
     li {
         margin-bottom: 0.8rem;
         &:last-child {

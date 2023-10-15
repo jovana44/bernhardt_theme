@@ -23,6 +23,7 @@
     &__title {
         display: block;
         margin: 0 14px 0 0;
+        font-family: $title-font;
         @include respond-to('medium') {
             margin: 0 0 10px 0;
         }
@@ -40,8 +41,8 @@
         right: 0;
         @include respond-to('medium') {
             position: absolute;
-            top: 0;
-            bottom: 0;
+            top: 7rem;
+            bottom: 7rem;
             left: 0;
             right: auto;
             width: calc((100% - 1040px)/2);

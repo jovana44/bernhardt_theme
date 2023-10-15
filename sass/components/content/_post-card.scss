@@ -1,7 +1,6 @@
 .post-card {
     display: flex;
     flex-direction: column;
-    @include respond-to('small') {}
     &__img {
         @include aspect-ratio(40%);
         background-repeat: no-repeat;
@@ -11,11 +10,14 @@
     }
     &__content {
         flex-grow: 1;
-        padding: 20px 30px 30px 30px;
+        padding: 15px 20px 18px 20px;
         background-color: $primary-light;
         display: flex;
         flex-direction: column;
         transition: 0.3s ease-in-out;
+        @include respond-to('small') {
+            padding: 20px 30px 25px 30px;
+        }
     }
     &__date {
         margin-bottom: 3px;
@@ -42,6 +44,11 @@
         text-transform: uppercase;
         svg {
             margin-left: 10px;
+        }
+        .a {
+            transition: 0.3s ease-in-out;
+            stroke: $primary;
+            fill: transparent;
         }
     }
     &:hover {

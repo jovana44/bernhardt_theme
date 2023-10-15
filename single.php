@@ -41,7 +41,7 @@ get_header();
             } ?>
 
             <div class="post__cats"><?php echo trim( $output, $separator );?></div>
-            <h2><?php the_title(); ?></h2>
+            <h2 class="single-main__title"><?php the_title(); ?></h2>
             <div class="post-date">
                 <span>
                     <?php echo get_the_date( "d.m.Y." ); ?>
@@ -136,7 +136,6 @@ get_header();
                                         .a {
                                             fill: none;
                                             stroke: #c4bc94;
-                                            transition: 0.3s ease-in-out;
                                         }
                                         </style>
                                     </defs>

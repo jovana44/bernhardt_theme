@@ -48,7 +48,7 @@
 
 
                     <a href="/" class="header__logo" aria-label="Home page">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="site-logo"
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/logo@x2.png" alt="site-logo"
                             width="364" height="24">
 
                     </a><!-- logo -->
