@@ -1,13 +1,17 @@
-<article class="author-block">
+<article class="author-block 
+    <?php echo ( get_post_meta( get_the_ID(), 'author_options', true )  == "author-image-right")?"image-right":""; ?>">
 
     <div class="author-block__profile">
+        <?php if( get_post_meta( get_the_ID(), 'hide_image', true )  == "no"): ?>
         <div class="author-block__image"><?php echo get_avatar(  get_the_author_meta( 'ID' ), '150' ); ?></div>
+        <?php endif; ?>
 
         <div class="author-block__socials">
             <span>Stay In Touch:</span>
 
             <div class="author-block__socials-row">
-                <a class="social-icon-round social-icon-round--white" href="mailto:<?php the_author_meta( 'user_email' ); ?>" aria-label="Contact email">
+                <a class="social-icon-round social-icon-round--white"
+                    href="mailto:<?php the_author_meta( 'user_email' ); ?>" aria-label="Contact email">
 
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 20 15">
                         <defs>
@@ -43,7 +47,8 @@
                     </svg>
 
                 </a>
-                <a class="social-icon-round social-icon-round--white" href="<?php the_author_meta( 'user_url' ); ?>" target="_blank" rel="noopener">
+                <a class="social-icon-round social-icon-round--white" href="<?php the_author_meta( 'user_url' ); ?>"
+                    target="_blank" rel="noopener">
                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
                         <defs>
                             <style>
@@ -67,7 +72,7 @@
         <h3 class="author-block__name"><?php the_author(); ?></h3>
         <div class="author-block__position">Venenatis tellus in metus vulputate</div>
         <?php if (get_the_author_meta('description')): ?>
-            <div class="author-block__bio"><?php the_author_meta( 'description' ); ?></div>
+        <div class="author-block__bio"><?php the_author_meta( 'description' ); ?></div>
         <?php endif; ?>
     </div>
 

@@ -87,7 +87,7 @@
         &-title {
             margin-bottom: 17px;
             display: block;
-            font-size: 16px;
+            font-size: 17px;
             color: $primary;
             text-transform: capitalize;
             font-family: $title-font;
@@ -106,6 +106,26 @@
                     margin-bottom: 7px;
                     &:last-of-type {
                         margin-bottom: 0;
+                    }
+                    a {
+                        position: relative;
+                    }
+                    a:after {
+                        content: '';
+                        width: 0;
+                        height: 1px;
+                        background-color: $primary;
+                        position: absolute;
+                        left: -1px;
+                        top: 50%;
+                        opacity: 0;
+                        transition: 0.25s ease-in-out;
+                    }
+                    &:hover {
+                        a:after {
+                            width: 115%;
+                            opacity: 1;
+                        }
                     }
                 }
             }

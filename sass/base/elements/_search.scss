@@ -1,12 +1,13 @@
 /*----------  Search icon  ----------*/
 
 .search-wrap {
+    position: relative;
+    @include respond-to('large') {
+        margin-left: 40px;
+    }
     .search-input {
         display: inline-block;
         position: relative;
-        @include respond-to('large') {
-            margin-left: 40px;
-        }
         input[type="text"] {
             width: 240px;
             font-size: 16px;
@@ -23,10 +24,7 @@
                 border: 1px solid rgba(255, 255, 255, .6);
             }
             @include respond-to('large') {
-                padding: 0;
-                width: 0;
-                position: absolute;
-                top: 0;
+                background: $primary;
             }
         }
     }
@@ -49,7 +47,7 @@
             background: $primary;
             width: 100%;
             position: absolute;
-            bottom: 4px;
+            bottom: 2px;
             opacity: 0;
             left: 0;
             transition: 0.25s ease-in-out;
@@ -65,11 +63,27 @@
             }
         }
         span {
-            display: none;
             margin-left: 10px;
             color: white;
+        }
+        &.hide-on-desktop {
             @include respond-to('large') {
-                display: inline-block;
+                display: none;
+            }
+        }
+    }
+    .searchform {
+        @include respond-to('large') {
+            width: 240px;
+            position: absolute;
+            top: 200%;
+            right: 0;
+            visibility: hidden;
+            display: none;
+            &.show {
+                visibility: visible;
+                top: -5px;
+                display: block;
             }
         }
     }

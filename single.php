@@ -11,11 +11,21 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-    
+
     <?php while ( have_posts() ) : the_post(); ?>
 
+    <?php 
+        if (has_post_thumbnail()) {
+           $backgroundImg = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full'); 
+           $backgroundImg = $backgroundImg[0];
+        }else {
+           $backgroundImg=get_template_directory_uri() . "/images/hero-bg@x2.png";
+        }
+    ?>
+
+
     <section class="single-hero"
-        style="background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo get_template_directory_uri(); ?>/images/hero-bg@x2.png')">
+        style="background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo $backgroundImg; ?>')">
         <div class="container">
             <div class="single-hero__content">
                 <div class="single-hero__title">
@@ -60,12 +70,13 @@ get_header();
             <?php get_template_part( 'template-parts/author', 'block' ); ?>
 
             <article class="clipboard">
-                <?php
-			    // Get current post URL 
-                $url = get_the_permalink();  ?>
+                <?php // Get current post URL 
+                      $url = get_the_permalink();  
+                ?>
                 <h3>Share This Article:</h3>
                 <div class="clipboard__box">
-                    <input class="clipboard__url" type="text" id="current-url" name="copy" value="<?php echo $url; ?>">
+                    <input class="clipboard__url" type="text" id="current-url" name="copy" value="<?php echo $url; ?>"
+                        disabled>
                     <span class="clipboard__icon" id="copy-to-clipboard">
                         <span class="tooltip-text" id="tooltip">Copy to clipboard</span>
                         <img src="<?php echo get_template_directory_uri(); ?>/images/icon-copy.svg"
@@ -81,13 +92,24 @@ get_header();
     </section>
 
 
+    <!-- Similar section custom fields for choosing post -->
+    <div>
+        <?php echo  (get_post_meta( get_the_ID(), 'similar_post_id1', true ))?"post similar1 exists: ".get_post_meta( get_the_ID(), 'similar_post_id1', true ):"";  ?>
+    </div>
+    <div>
+        <?php echo ( get_post_meta( get_the_ID(), 'similar_post_id2', true ))?"post similar2 exists: ".get_post_meta( get_the_ID(), 'similar_post_id2', true ):""; ?>
+    </div>
+    <div>
+        <?php echo ( get_post_meta( get_the_ID(), 'similar_post_id3', true ))?"post similar3 exists: ".get_post_meta( get_the_ID(), 'similar_post_id3', true ):""; ?>
+    </div>
+    <!-- END Similar custom meta fields -->
     <section>
         <div class="container">
             <div class="similar-posts">
                 <h2>Similar Posts</h2>
                 <div class="similar-posts__row">
 
-                    <!-- similar posts -->
+                    <!-- last 3 similar posts -->
                     <?php
                      // WP_Query arguments
                      $args = array(

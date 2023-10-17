@@ -6,17 +6,17 @@
     @include respond-to('small') {
         margin-bottom: 5rem;
         padding: 5rem;
-        display: grid;
-        grid-template-columns: 100px auto;
+        display: flex;
         column-gap: 30px;
-    }
-    @include respond-to('medium') {
-        grid-template-columns: 150px auto;
+        &.image-right {
+            flex-direction: row-reverse;
+        }
     }
     &__text {
         margin-top: 20px;
         @include respond-to('small') {
             margin-top: 0;
+            flex-grow: 1;
         }
     }
     &__name {
@@ -42,9 +42,9 @@
     }
     &__image {
         margin-bottom: 6px;
-        max-width: 100px;
+        width: 100px;
         @include respond-to('medium') {
-            max-width: 150px;
+            width: 150px;
         }
     }
 }

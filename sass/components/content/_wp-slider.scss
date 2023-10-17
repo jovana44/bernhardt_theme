@@ -32,7 +32,7 @@
     position: absolute;
     top: 50%;
     // font-size: 1.5em;
-    padding: 15px 10px;
+    padding: 15px 0;
     // border-radius: 5px;
     // background: white;
     cursor: pointer;
@@ -51,24 +51,28 @@
         }
     }
     &.wp-left-arrow {
-        margin-left: -26px;
+        margin-left: -13px;
         @include respond-to('small') {
-            margin-left: -60px;
+            margin-left: -50px;
+            &:hover {
+                margin-left: -60px;
+                transform: translateY(-50%) scale(1.2);
+            }
         }
     }
     &.wp-right-arrow {
-        margin-right: -26px;
+        margin-right: -13px;
         @include respond-to('small') {
-            margin-right: -60px;
+            margin-right: -50px;
+            &:hover {
+                margin-right: -60px;
+                transform: translateY(-50%) scaleX(1.2);
+            }
         }
         svg {
             transform: rotate(180deg);
         }
     }
-}
-
-.wp-controls:hover {
-    opacity: 60%;
 }
 
 .wp-left-arrow {

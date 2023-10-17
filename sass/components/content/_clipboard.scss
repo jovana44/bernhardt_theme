@@ -23,5 +23,18 @@
         position: absolute;
         top: 9px;
         right: 10px;
+        cursor: pointer;
+    }
+    .tooltip-text {
+        padding: 3px 5px;
+        background-color: $primary;
+        color: white;
+        display: none;
+        position: absolute;
+        bottom: 110%;
+        right: 0;
+        &.show {
+            display: block;
+        }
     }
 }

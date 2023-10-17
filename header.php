@@ -44,9 +44,9 @@
 			            	)
 			            );
 			            ?>
-<div class="hide-on-desktop">
+                        <div class="hide-on-desktop">
 
-<?php
+                            <?php
 		    	             wp_nav_menu(
 		    	             	array(
 		    	             		'theme_location' => 'header-menu-right'
@@ -54,9 +54,11 @@
 		    	             );
 			                 ?>
 
-<?php get_search_form(); ?>
+                            <div class="search-wrap">
+                                <?php get_search_form(); ?>
+                            </div>
 
-</div>
+                        </div>
 
                     </nav><!-- #site-navigation -->
 
@@ -79,17 +81,21 @@
 			                 ?>
                         </nav><!-- #site-navigation -->
 
-                        <div class="hide-on-mobile">
-                        <?php get_search_form(); ?>
+                        <div class="search-wrap hide-on-mobile">
+                            <button class="search-icon search-icon-btn hide-on-mobile" id="searchsubmit"><img
+                                    src="<?php echo get_template_directory_uri(); ?>/images/icon-search.svg"
+                                    alt="Search icon" width="12" height="12"><span>Search</span></button>
+                            <?php get_search_form(); ?>
                         </div>
 
                         <div class="language">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/globe-icon.svg" alt="globe icon"
-                            width="13" height="13">
-                            <div class="language__picker">
-                                <a class="language__current" href="#">Eng<span class="arrow arrow--small arrow--light down"></span></a>
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/globe-icon.svg"
+                                alt="globe icon" width="13" height="13">
+                            <div class="language__picker" id="languagePicker">
+                                <a class="language__current" href="#">Eng<span
+                                        class="arrow arrow--small arrow--light down"></span></a>
                                 <ul class="language__dropdown sub-menu">
-                                    <li>Srb</li>
+                                    <li><a href="#">Srb</a></li>
                                 </ul>
                             </div>
                         </div>
