@@ -92,16 +92,10 @@ get_header();
     </section>
 
 
-    <!-- Similar section custom fields for choosing post -->
-    <div>
-        <?php echo  (get_post_meta( get_the_ID(), 'similar_post_id1', true ))?"post similar1 exists: ".get_post_meta( get_the_ID(), 'similar_post_id1', true ):"";  ?>
-    </div>
-    <div>
-        <?php echo ( get_post_meta( get_the_ID(), 'similar_post_id2', true ))?"post similar2 exists: ".get_post_meta( get_the_ID(), 'similar_post_id2', true ):""; ?>
-    </div>
-    <div>
-        <?php echo ( get_post_meta( get_the_ID(), 'similar_post_id3', true ))?"post similar3 exists: ".get_post_meta( get_the_ID(), 'similar_post_id3', true ):""; ?>
-    </div>
+    <!-- Similar posts custom fields -->
+    <?php $similarPostID1 = get_post_meta( get_the_ID(), 'similar_post_id1', true ); ?>
+    <?php $similarPostID2 = get_post_meta( get_the_ID(), 'similar_post_id2', true ); ?>
+    <?php $similarPostID3 = get_post_meta( get_the_ID(), 'similar_post_id3', true ); ?>
     <!-- END Similar custom meta fields -->
     <section>
         <div class="container">
@@ -109,6 +103,157 @@ get_header();
                 <h2>Similar Posts</h2>
                 <div class="similar-posts__row">
 
+                    <?php if ($similarPostID1 || $similarPostID2 || $similarPostID3){?>
+
+                    <?php if ($similarPostID1){?>
+                    <a class="post-card" href="<?php echo get_permalink($similarPostID1);?>">
+
+                        <?php
+                            if (has_post_thumbnail($similarPostID1)) {
+                               $backgroundImg = wp_get_attachment_image_src(get_post_thumbnail_id($similarPostID1), 'medium_large'); 
+                               $backgroundImg = $backgroundImg[0];
+                            }else {
+                               $backgroundImg= "";
+                            }
+                        ?>
+
+                        <div class="post-card__img" style="background-image: url('<?php echo $backgroundImg;?>')"></div>
+
+                        <div class="post-card__content">
+                            <div class="post-card__date">
+                                <span>
+                                    <?php echo get_the_date( "d.m.Y.", $similarPostID1); ?>
+                                </span>
+                                <span>
+                                    <?php echo get_the_time( 'G:i', $similarPostID1 ); ?>
+                                </span>
+                            </div>
+
+                            <h3><?php echo get_the_title($similarPostID1); ?></h3>
+
+                            <div class="post-card__btn">
+                                Read more
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28.739" height="6.736"
+                                    viewBox="0 0 28.739 6.736">
+                                    <defs>
+                                        <style>
+                                        .a {
+                                            fill: none;
+                                            stroke: #c4bc94;
+                                        }
+                                        </style>
+                                    </defs>
+                                    <g transform="translate(0 6.368) rotate(-90)">
+                                        <path class="a" d="M27.921,0H0"
+                                            transform="translate(3.014 27.921) rotate(-90)" />
+                                        <path class="a" d="M0,0,3,3.266,6,0" transform="translate(0 24.734)" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                    <?php }?>
+
+                    <?php if ($similarPostID2){?>
+                    <a class="post-card" href="<?php echo get_permalink($similarPostID2);?>">
+
+                        <?php
+                            if (has_post_thumbnail($similarPostID1)) {
+                               $backgroundImg = wp_get_attachment_image_src(get_post_thumbnail_id($similarPostID2), 'medium_large'); 
+                               $backgroundImg = $backgroundImg[0];
+                            }else {
+                               $backgroundImg= "";
+                            }
+                        ?>
+
+                        <div class="post-card__img" style="background-image: url('<?php echo $backgroundImg;?>')"></div>
+
+                        <div class="post-card__content">
+                            <div class="post-card__date">
+                                <span>
+                                    <?php echo get_the_date( "d.m.Y.", $similarPostID2); ?>
+                                </span>
+                                <span>
+                                    <?php echo get_the_time( 'G:i', $similarPostID2 ); ?>
+                                </span>
+                            </div>
+
+                            <h3><?php echo get_the_title($similarPostID2); ?></h3>
+
+                            <div class="post-card__btn">
+                                Read more
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28.739" height="6.736"
+                                    viewBox="0 0 28.739 6.736">
+                                    <defs>
+                                        <style>
+                                        .a {
+                                            fill: none;
+                                            stroke: #c4bc94;
+                                        }
+                                        </style>
+                                    </defs>
+                                    <g transform="translate(0 6.368) rotate(-90)">
+                                        <path class="a" d="M27.921,0H0"
+                                            transform="translate(3.014 27.921) rotate(-90)" />
+                                        <path class="a" d="M0,0,3,3.266,6,0" transform="translate(0 24.734)" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                    <?php }?>
+
+                    <?php if ($similarPostID3){?>
+                    <a class="post-card" href="<?php echo get_permalink($similarPostID3);?>">
+
+                        <?php
+                            if (has_post_thumbnail($similarPostID3)) {
+                               $backgroundImg = wp_get_attachment_image_src(get_post_thumbnail_id($similarPostID3), 'medium_large'); 
+                               $backgroundImg = $backgroundImg[0];
+                            }else {
+                               $backgroundImg= "";
+                            }
+                        ?>
+
+                        <div class="post-card__img" style="background-image: url('<?php echo $backgroundImg;?>')"></div>
+
+                        <div class="post-card__content">
+                            <div class="post-card__date">
+                                <span>
+                                    <?php echo get_the_date( "d.m.Y.", $similarPostID3); ?>
+                                </span>
+                                <span>
+                                    <?php echo get_the_time( 'G:i', $similarPostID3 ); ?>
+                                </span>
+                            </div>
+
+                            <h3><?php echo get_the_title($similarPostID3); ?></h3>
+
+                            <div class="post-card__btn">
+                                Read more
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28.739" height="6.736"
+                                    viewBox="0 0 28.739 6.736">
+                                    <defs>
+                                        <style>
+                                        .a {
+                                            fill: none;
+                                            stroke: #c4bc94;
+                                        }
+                                        </style>
+                                    </defs>
+                                    <g transform="translate(0 6.368) rotate(-90)">
+                                        <path class="a" d="M27.921,0H0"
+                                            transform="translate(3.014 27.921) rotate(-90)" />
+                                        <path class="a" d="M0,0,3,3.266,6,0" transform="translate(0 24.734)" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                    <?php }?>
+
+
+                    <?php }else{?>
                     <!-- last 3 similar posts -->
                     <?php
                      // WP_Query arguments
@@ -179,6 +324,8 @@ get_header();
 
                     <?php endif; ?>
                     <!-- end similar posts -->
+
+                    <?php } ?>
 
                 </div>
             </div>

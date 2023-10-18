@@ -122,6 +122,18 @@
                         transition: border-color 0.25s ease;
                     }
                 }
+                .nav-arrow {
+                    position: relative;
+                    border: solid white;
+                    border-width: 0 1px 1px 0;
+                    display: inline-block;
+                    height: 6px;
+                    width: 6px;
+                    transform: rotate(45deg);
+                    margin-left: 16px;
+                    margin-bottom: 3px;
+                    transition: border-color 0.25s ease;
+                }
             }
             &>.sub-menu {
                 transition: 0.3s ease-in-out;

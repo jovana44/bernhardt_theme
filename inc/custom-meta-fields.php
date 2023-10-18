@@ -136,7 +136,7 @@ function choose_similar_posts_custom_box()
         add_meta_box(
             'similar_posts_meta_box',
             // Unique ID
-            'Choose max 3 similar posts',
+            'Choose max 3 similar posts (if you choose none, the last 3 posts from the same category will be displayed)',
             // Box title
             'similar_posts_box_html',
             // Content callback, must be of type callable

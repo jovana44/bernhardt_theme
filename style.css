@@ -1309,6 +1309,23 @@ textarea:focus {
   }
 }
 
+.header .menu > .menu-item-has-children > a .nav-arrow {
+  position: relative;
+  border: solid white;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  margin-left: 16px;
+  margin-bottom: 3px;
+  -webkit-transition: border-color 0.25s ease;
+  -o-transition: border-color 0.25s ease;
+  transition: border-color 0.25s ease;
+}
+
 .header .menu > .menu-item-has-children > .sub-menu {
   -webkit-transition: 0.3s ease-in-out;
   -o-transition: 0.3s ease-in-out;

@@ -12,7 +12,8 @@ add_filter( 'wp_footer', function ( ) {  ?>
 		var src = [];
 		var alt = [];
 		var img = slider.querySelectorAll("img");
-		img.forEach( e => { src.push(e.src);   if (e.alt) { alt.push(e.alt); } else { alt.push("image"); } })
+		img.forEach( e => { src.push(e.src);   
+		if (e.alt) { alt.push(e.alt); } else { alt.push("image"); } })
 		let i = 0;
 		let image = "";
 		let myDot = "";

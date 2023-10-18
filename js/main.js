@@ -164,25 +164,41 @@
 
 
 
+	
+	// Dropdown menu functionality on mobile, dropdown on click
+	const mediaQuery = window.matchMedia('(max-width: 1200px)');
+	if (mediaQuery.matches) {
+		var menuItems = document.querySelectorAll('.header .menu-item-has-children > a');
+		if (menuItems && menuItems.length > 0) {
+			menuItems.forEach(function (menuItem) {
+				menuItem.innerHTML += "<span class='nav-arrow'></span>";
+				console.log(menuItem.firstElementChild);
+				menuItem.firstElementChild.addEventListener('click', function (evt) {
+
+					evt.preventDefault();
+
+					var ul = this.parentNode.parentNode.querySelector('ul'),
+						open = (ul && ul.style.display == 'block') ? true : false;
+
+					// Hide all submenu item
+					var submenuItems = document.querySelectorAll('.menu-item-has-children ul');
+					if (submenuItems && submenuItems.length > 0) {
+						submenuItems.forEach(function (submenuItem) {
+							submenuItem.style.display = 'none';
+						});
+					}
+
+					ul.style.display = open ? 'none' : 'block';
+				});
+			});
+		}
+	}
+
+
+
+
 
 
 }());
 
 
-
-
-
-/*
- *  jQuery
- */
-
-(function ($) {
-
-	'use strict';
-
-	$(document).ready(function () {
-
-
-	});
-
-}(jQuery));
